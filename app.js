@@ -17,9 +17,9 @@ app.post("/", function(req, res){
   const lastName = req.body.lastName;
   const email = req.body.email;
 
-//  const apikey = 53efdbd800e2097f21358d5a63ecca6e-us7;
-// list ID
-// 10c6d335ef
+
+
+
 const data = {
   members:[{
   email_address: email,
@@ -32,12 +32,13 @@ const data = {
 
 var jsonData = JSON.stringify(data);
 console.log(jsonData);
+//add list id here from mailchimp
+const url = "https://us7.api.mailchimp.com/3.0/lists/{list_id}";
 
-const url = "https://us7.api.mailchimp.com/3.0/lists/10c6d335ef";
-
+  //add your mailchimp api key after auth 
 const options ={
   method : "POST",
-  auth: "shahmir:385a2f429d0e0debcbeef9f7ae59fc68-us7"
+  auth: "shahmir:Apikey"
 };
 
 const request = https.request(url, options, function(response){
