@@ -17,9 +17,6 @@ app.post("/", function(req, res){
   const lastName = req.body.lastName;
   const email = req.body.email;
 
-
-
-
 const data = {
   members:[{
   email_address: email,
@@ -60,8 +57,6 @@ request.end();
 app.post("/failure", function(req, res){
 res.redirect("/");
 });
-
-
 
 app.listen(3000, function(){
   console.log("server running at port 3000");
